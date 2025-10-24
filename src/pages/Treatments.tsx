@@ -29,8 +29,9 @@ export default function Treatments() {
       : treatments.filter((t) => t.category === selectedCategory);
 
   const getIcon = (iconName: string) => {
-    const IconComponent = (Icons as any)[iconName] || Icons.Activity;
-    return IconComponent;
+    type IconsType = typeof Icons;
+    const IconComponent = (Icons as IconsType)[iconName as keyof IconsType] as React.ComponentType<{ className?: string }>;
+    return IconComponent || Icons.Activity;
   };
 
   return (

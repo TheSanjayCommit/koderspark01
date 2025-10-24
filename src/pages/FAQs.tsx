@@ -62,7 +62,7 @@ export default function FAQs() {
                       {category} Questions
                     </h2>
                     <div className="space-y-4">
-                      {categoryFaqs.map((faq, index) => {
+                      {categoryFaqs.map((faq) => {
                         const globalIndex = faqs.indexOf(faq);
                         const isOpen = openIndex === globalIndex;
                         return (
